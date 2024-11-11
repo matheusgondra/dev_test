@@ -1,3 +1,4 @@
+import { ConflictUserError } from "../errors";
 import { badRequest, conflict, created, serverError } from "../helpers/http";
 import {
 	HttpController,
@@ -28,7 +29,7 @@ export class CreateUserController implements HttpController {
 				password,
 			});
 			if (!user) {
-				return conflict(new Error("User already exists"));
+				return conflict(new ConflictUserError());
 			}
 
 			return created(user);
