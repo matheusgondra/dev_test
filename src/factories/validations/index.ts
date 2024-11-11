@@ -1,1 +1,1 @@
-export * from "./CreateUserValidationsFactory";
+export * from "./create-user-validation-factory";

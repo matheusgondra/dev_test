@@ -1,1 +1,1 @@
-export * from "./CreateUserControllerFactory";
+export * from "./create-user-controller-factory";

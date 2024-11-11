@@ -3,7 +3,7 @@ import { User } from "../../entity/User";
 import { Validation } from "../../interfaces";
 import { EmailValidation, RequiredFieldValidation, ValidationComposite } from "../../validations";
 
-export const createUserValidationsFactory = (repository: Repository<User>): ValidationComposite => {
+export const makeCreateUserValidation = (repository: Repository<User>): ValidationComposite => {
 	const validations: Validation[] = [];
 	
 	const requiredFields = ["name", "email", "password"];
