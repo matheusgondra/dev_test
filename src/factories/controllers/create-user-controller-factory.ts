@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import { CreateUserController } from "../../controllers/CreateUserController";
+import { CreateUserController } from "../../controllers";
 import { User } from "../../entity/User";
 import { CreateUserService } from "../../services/CreateUserService";
 import { makeCreateUserValidation } from "../validations";
