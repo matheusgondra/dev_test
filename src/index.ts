@@ -3,6 +3,8 @@ import express from 'express';
 import { DataSource } from 'typeorm';
 import { User } from './entity/User';
 import { Post } from './entity/Post';
+import { adaptRoute } from './helpers';
+import { createUserControllerFactory } from './factories/controllers';
 
 const app = express();
 app.use(express.json());
@@ -33,9 +35,9 @@ const initializeDatabase = async () => {
 
 initializeDatabase();
 
-app.post('/users', async (req, res) => {
-// Crie o endpoint de users
-});
+const userRepository = AppDataSource.getRepository(User);
+
+app.post('/users', adaptRoute(createUserControllerFactory(userRepository)));
 
 app.post('/posts', async (req, res) => {
 // Crie o endpoint de posts
