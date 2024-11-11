@@ -11,7 +11,7 @@ import { CreateUser } from "../protocols";
 export class CreateUserController implements HttpController {
 	constructor(
 		private readonly validation: Validation,
-		private readonly createUserService: CreateUser
+		private readonly createUser: CreateUser
 	) {}
 
 	async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
@@ -22,7 +22,7 @@ export class CreateUserController implements HttpController {
 			}
 
 			const { firstName, lastName, email, password } = httpRequest.body;
-			const user = await this.createUserService.create({
+			const user = await this.createUser.create({
 				firstName,
 				lastName,
 				email,
