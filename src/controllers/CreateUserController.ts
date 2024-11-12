@@ -21,12 +21,11 @@ export class CreateUserController implements HttpController {
 				return badRequest(error);
 			}
 
-			const { firstName, lastName, email, password } = httpRequest.body;
+			const { firstName, lastName, email } = httpRequest.body;
 			const user = await this.createUser.create({
 				firstName,
 				lastName,
-				email,
-				password,
+				email
 			});
 			if (!user) {
 				return conflict(new ConflictUserError());

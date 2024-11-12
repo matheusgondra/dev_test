@@ -5,7 +5,7 @@ import { CreateUserService } from "../../services";
 import { makeCreateUserValidation } from "../validations";
 
 export const makeCreateUserController = (repository: Repository<User>): CreateUserController => {
-	const validation = makeCreateUserValidation(repository);
+	const validation = makeCreateUserValidation();
 	const createUser = new CreateUserService(repository)
 	return new CreateUserController(validation, createUser);
 };

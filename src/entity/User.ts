@@ -1,8 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, JoinColumn } from "typeorm";
 import { Post } from "./Post";
 
-//TODO Crie a entidade de User
-@Entity()
+@Entity("user")
 export class User {
 	@PrimaryGeneratedColumn()
 	id: number;

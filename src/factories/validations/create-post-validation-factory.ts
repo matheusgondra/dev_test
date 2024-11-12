@@ -1,6 +1,4 @@
-import { Repository } from "typeorm";
 import { Validation } from "../../interfaces";
-import { Post } from "../../entity/Post";
 import { LengthValidation, RequiredFieldValidation, ValidationComposite } from "../../validations";
 
 export const makeCreatePostValidation = (): Validation => {

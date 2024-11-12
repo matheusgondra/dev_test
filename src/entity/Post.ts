@@ -1,8 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, UpdateDateColumn, CreateDateColumn } from "typeorm";
 import { User } from "./User";
 
-//TODO Crie a entidade de Post
-@Entity()
+@Entity("post")
 export class Post {
 	@PrimaryGeneratedColumn()
 	id: number;
